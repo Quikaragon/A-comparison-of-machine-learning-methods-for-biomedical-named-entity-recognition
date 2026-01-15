@@ -54,6 +54,19 @@ Follow the cell order to reproduce the experiments and visualizations.
 ## Images and Results
 Plots and results are saved in the `Imagenes/` folder.
 
+## Model Checkpoint Files (.pt)
+
+After training the BERT or BioBERT models, a file named `bert_jnlpba_best.pt` or `biobert_jnlpba_best.pt` is generated in the project directory. These files contain the learned weights of the trained models and are required for making predictions or resuming training later.
+
+- **File names:** `bert_jnlpba_best.pt`, `biobert_jnlpba_best.pt`
+- **Approximate size:** 420 MB each
+- **Purpose:** Store the parameters of the best model found during training (based on F1 score on the test set).
+- **Usage:**
+    - To use a trained model for inference or further training, load the file with `model.load_state_dict(torch.load("bert_jnlpba_best.pt"))` (or the corresponding BioBERT file).
+    - Make sure the file is present in your working directory when running inference or evaluation code.
+
+> **Note:** These files are not included in the repository due to their size. You will need to train the models yourself to generate them.
+
 ## Reproducibility
 If you have dependency issues, check the `environment_TFG.yml` file and make sure to install the environment from it.
 
@@ -71,4 +84,4 @@ If you have dependency issues, check the `environment_TFG.yml` file and make sur
 - If you encounter out-of-memory errors, try reducing the batch size or sequence length in the notebook configuration.
 
 ## Contact
-For questions or suggestions, open an issue in the repository or contact the author.
+For questions or suggestions, open an issue in the repository .
