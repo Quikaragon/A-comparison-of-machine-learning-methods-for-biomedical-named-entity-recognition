@@ -68,7 +68,30 @@ After training the BERT or BioBERT models, a file named `bert_jnlpba_best.pt` or
 > **Note:** These files are not included in the repository due to their size. You will need to train the models yourself to generate them.
 
 ## Reproducibility
-If you have dependency issues, check the `environment_TFG.yml` file and make sure to install the environment from it.
+
+## Alternative: Using requirements.txt if the YAML environment fails
+
+If you have trouble creating the environment with the YAML file, you can use the requirements.txt file as an alternative. Follow these steps:
+
+1. **Unzip the project files** if you downloaded them as a ZIP.
+2. **Create a new environment**:
+  ```
+  conda create -n TFG python=3.10 pip
+  ```
+3. **Activate the environment**:
+  ```
+  conda activate TFG
+  ```
+4. **Install the dependencies** (including CUDA support for PyTorch):
+  ```
+  pip install --extra-index-url https://download.pytorch.org/whl/cu128 -r requirements.txt
+  ```
+5. **Open the notebooks** with Jupyter Notebook or a similar tool:
+  ```
+  jupyter notebook
+  ```
+
+This method will install all required packages and allow you to run the notebooks even if the YAML environment creation fails.
 
 ## Notes on Performance and Hardware
 
